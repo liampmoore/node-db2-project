@@ -2,6 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 
 const carsRouter = require('../cars/cars-router.js');
+const salesRouter = require('../sales/sales-router');
 
 const server = express();
 
@@ -9,5 +10,6 @@ server.use(helmet());
 server.use(express.json());
 
 server.use('/api/cars', carsRouter);
+server.use('/api/sales', salesRouter);
 
 module.exports = server;
